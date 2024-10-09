@@ -28,5 +28,25 @@ function modulo(a,b){
     return result;
 };
 
-let results = addition(16,5)
-console.log(results)
+function operate(operator,num1,num2){
+
+    if(operator === '+'){
+        return(addition(num1,num2))
+
+    } else if (operator === '-'){
+        return(subtraction(num1,num2))
+
+    } else if (operator === '*'){
+        return(multiplication(num1,num2))
+
+    } else if (operator === '/'){
+        return (division(num1,num2))
+
+    } else if (operator === '%'){
+        return(modulo(num1,num2))
+
+    } else {
+        return 'Invalid Operator'
+    };
+}
+console.log(operate('/',6,3))
