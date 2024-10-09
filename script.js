@@ -1,26 +1,32 @@
 function addition (a,b){
-    return a+b;
+    let num1 = a;
+    let num2 = b;
+    let result = num1 + num2;
+    return result;
 };
 function subtraction(a,b){
-    return a-b;
-};
+    let num1 = a;
+    let num2 = b;
+    let result = num1 - num2;
+    return result;};
 function multiplication(a,b){
-    return a*b;
+    let num1 = a;
+    let num2 = b;
+    let result = num1 * num2;
+    return result;
 }
 function division(a,b){
-    return a/b;
+    let num1 = a;
+    let num2 = b;
+    let result = num1 / num2;
+    return result;
 };
 function modulo(a,b){
-    return a%b;
+    let num1 = a;
+    let num2 = b;
+    let result = num1 % num2;
+    return result;
 };
-let result = addition(3,5)
-let result1 = subtraction(13,5)
-let result2 = multiplication(3,5)
-let result3 = division(4,2)
-let result4 = modulo(8,5)
 
-console.log(result)
-console.log(result1)
-console.log(result2)
-console.log(result3)
-console.log(result4)
+let results = addition(16,5)
+console.log(results)
