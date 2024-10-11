@@ -1,3 +1,15 @@
+const numberButton = document.getElementById('numBtn')
+const operatorButton = document.getElementById('operatorBtn')
+const equalsButton = document.getElementById('equalBtn')
+const dotButton = document.getElementById('dotBtn')
+const deleteButton = document.getElementById('delBtn')
+const clearButton = document.getElementById('clrBtn')
+const operation = document.querySelector('.operation')
+const input = document.querySelector('.input')
+
+
+
+
 function addition (a,b){
     let num1 = a;
     let num2 = b;
@@ -51,4 +63,3 @@ function operate(operator,num1,num2){
         return null
     }
 }
-console.log(operate('+',6,3))
