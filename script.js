@@ -21,7 +21,7 @@ function division(a,b){
     let result = num1 / num2;
     return result;
 };
-function modulo(a,b){
+function percentage(a,b){
     let num1 = a;
     let num2 = b;
     let result = num1 % num2;
@@ -30,23 +30,25 @@ function modulo(a,b){
 
 function operate(operator,num1,num2){
 
-    if(operator === '+'){
-        return(addition(num1,num2))
+    switch(operator) {
 
-    } else if (operator === '-'){
-        return(subtraction(num1,num2))
-
-    } else if (operator === '*'){
-        return(multiplication(num1,num2))
-
-    } else if (operator === '/'){
-        return (division(num1,num2))
-
-    } else if (operator === '%'){
-        return(modulo(num1,num2))
-
-    } else {
-        return 'Invalid Operator'
+    case '+': {
+        return addition(num1,num2);
     };
+    case '-': {
+        return subtraction(num1,num2)
+    };
+    case '*': {
+        return multiplication(num1,num2)
+    };
+    case '/': {
+        return division(num1,num2)
+    };
+    case '%': {
+        return percentage(num1,num2)
+    }
+    default:
+        return null
+    }
 }
-console.log(operate('/',6,3))
+console.log(operate('+',6,3))
