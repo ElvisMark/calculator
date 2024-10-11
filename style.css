@@ -12,12 +12,12 @@ body{
     margin: 5rem auto;
     margin-bottom: 2rem;
     flex-direction: column;
-    background-color: #e6ecec; 
+    background-color: #676868; 
     border: 1px solid black;
     max-width: 350px;
     width: 100%;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 .display-screen {
     display: flex;
@@ -29,10 +29,11 @@ body{
     padding: 15px;
     border: 1px solid #0c0c0c;
     margin-bottom: 15px;
+    margin-top: 5px;
     color: #024050;
     overflow: hidden;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .operation {
     align-self: start;
@@ -61,13 +62,30 @@ body{
 button {
     font-size: large;
     font-weight: 500;
-    color: #fffcfc;
+    color: #0a0a0a;
     border: none;
-    background-color: #016443;
+    background-color: #e8eeed;
     border-radius: 32px;
     width: 60px;
     height: 60px;
+    cursor: pointer;
 }
 #equals {
     width: 126px;
+}
+#clear:hover,#delete:hover {
+    background-color: #034b30;
+}
+#percentage:hover,#divide:hover,#multiply:hover,#subtract:hover,#add:hover {
+    background-color: #05e7c9;
+}
+#equals:hover{
+    background-color: rgb(71, 3, 3);
+}
+#zero:hover,#one:hover, #two:hover,#three:hover,#four:hover,#five:hover,
+#six:hover,#seven:hover,#eight:hover,#nine:hover {
+    background-color: #5d4574;
+}
+#dot:hover{
+    background-color: #138d60;
 }
