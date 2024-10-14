@@ -1,5 +1,8 @@
-const numberButton = document.getElementById('numBtn')
-const operatorButton = document.getElementById('operatorBtn')
+let displayValue = '';
+
+
+const numberButton = document.querySelectorAll('.numBtn')
+const operatorButton = document.querySelectorAll('.operatorBtn')
 const equalsButton = document.getElementById('equalBtn')
 const dotButton = document.getElementById('dotBtn')
 const deleteButton = document.getElementById('delBtn')
@@ -8,6 +11,24 @@ const operation = document.querySelector('.operation')
 const input = document.querySelector('.input')
 
 
+numberButton.forEach(button => {
+    button.addEventListener('click', (e) => {
+    const buttonValue = e.target.textContent;
+    displayValue += buttonValue;
+    input.textContent = displayValue;
+    })
+});
+operatorButton.forEach(button => {
+    button.addEventListener('click',(e) => {
+        const operator = e.target.textContent
+        displayValue += operator
+        input.textContent =displayValue
+    });
+});
+clearButton.addEventListener('click', () => {
+    displayValue = ''
+    input.textContent = ''
+})
 
 
 function addition (a,b){
