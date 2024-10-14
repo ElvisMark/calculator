@@ -10,10 +10,10 @@ body{
     align-items: center;
     text-align: center;
     margin: 5rem auto;
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
     flex-direction: column;
     background-color: #676868; 
-    border: 1px solid black;
+    border: 2px solid black;
     max-width: 350px;
     width: 100%;
     padding: 10px;
@@ -27,7 +27,7 @@ body{
     width: 300px;
     height: 90px;
     padding: 15px;
-    border: 1px solid #0c0c0c;
+    border: px solid #0c0c0c;
     margin-bottom: 15px;
     margin-top: 5px;
     color: #024050;
@@ -70,22 +70,22 @@ button {
     height: 60px;
     cursor: pointer;
 }
-#equals {
+.equals {
     width: 126px;
 }
-#clear:hover,#delete:hover {
+.clear:hover,.delete:hover {
     background-color: #034b30;
 }
-#percentage:hover,#divide:hover,#multiply:hover,#subtract:hover,#add:hover {
+.percentage:hover,.divide:hover,.multiply:hover,.subtract:hover,.add:hover {
     background-color: #05e7c9;
 }
-#equals:hover{
-    background-color: rgb(71, 3, 3);
+.equals:hover{
+    background-color: #470303;
 }
-#zero:hover,#one:hover, #two:hover,#three:hover,#four:hover,#five:hover,
-#six:hover,#seven:hover,#eight:hover,#nine:hover {
+.zero:hover,.one:hover, .two:hover,.three:hover,.four:hover,.five:hover,
+.six:hover,.seven:hover,.eight:hover,.nine:hover {
     background-color: #5d4574;
 }
-#dot:hover{
+.dot:hover{
     background-color: #138d60;
 }
