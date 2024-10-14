@@ -1,4 +1,8 @@
 let displayValue = '';
+let firstOperand = '';
+let secondOperand = '';
+let currentOperator = '';
+
 
 
 const numberButton = document.querySelectorAll('.numBtn')
@@ -20,16 +24,37 @@ numberButton.forEach(button => {
 });
 operatorButton.forEach(button => {
     button.addEventListener('click',(e) => {
+        if(firstOperand === ''){
+            firstOperand = displayValue;
+            displayValue = '';
+            currentOperator = e.target.textContent;
+        }
         const operator = e.target.textContent
         displayValue += operator
         input.textContent =displayValue
+        displayValue = ''
     });
 });
 clearButton.addEventListener('click', () => {
     displayValue = ''
     input.textContent = ''
 })
-
+dotButton.addEventListener('click', (e) => {
+    const dot = e.target.textContent;
+    displayValue += dot;
+    input.textContent = displayValue;
+})
+equalsButton.addEventListener('click', () => {
+    if (firstOperand !== '' && currentOperator !== '') {
+        secondOperand = displayValue;
+        const result = operate
+            (currentOperator, parseFloat(firstOperand), parseFloat(secondOperand)); 
+        input.textContent = result;
+        displayValue = result;
+        firstOperand = '';  
+        currentOperator = '';
+    }
+});
 
 function addition (a,b){
     let num1 = a;
