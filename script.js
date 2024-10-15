@@ -2,6 +2,7 @@ let displayValue = '';
 let firstOperand = '';
 let secondOperand = '';
 let currentOperator = '';
+let operationValue = '';
 
 
 
@@ -11,15 +12,17 @@ const equalsButton = document.getElementById('equalBtn')
 const dotButton = document.getElementById('dotBtn')
 const deleteButton = document.getElementById('delBtn')
 const clearButton = document.getElementById('clrBtn')
-const operation = document.querySelector('.operation')
-const input = document.querySelector('.input')
+const operationScreen = document.querySelector('.operation')
+const inputScreen = document.querySelector('.input')
 
 
 numberButton.forEach(button => {
     button.addEventListener('click', (e) => {
     const buttonValue = e.target.textContent;
     displayValue += buttonValue;
-    input.textContent = displayValue;
+    operationValue += buttonValue
+    inputScreen.textContent = displayValue;
+    operationScreen.textContent =operationValue
     })
 });
 operatorButton.forEach(button => {
@@ -31,25 +34,29 @@ operatorButton.forEach(button => {
         }
         const operator = e.target.textContent
         displayValue += operator
-        input.textContent =displayValue
+        operationValue += operator
+        // inputScreen.textContent =displayValue
+        operationScreen.textContent = operationValue
         displayValue = ''
+        
     });
 });
 clearButton.addEventListener('click', () => {
     displayValue = ''
-    input.textContent = ''
+    inputScreen.textContent = '0'
+    operationScreen.textContent = '0'
 })
 dotButton.addEventListener('click', (e) => {
     const dot = e.target.textContent;
     displayValue += dot;
-    input.textContent = displayValue;
+    inputScreen.textContent = displayValue;
 })
 equalsButton.addEventListener('click', () => {
     if (firstOperand !== '' && currentOperator !== '') {
         secondOperand = displayValue;
         const result = operate
             (currentOperator, parseFloat(firstOperand), parseFloat(secondOperand)); 
-        input.textContent = result;
+        inputScreen.textContent = result;
         displayValue = result;
         firstOperand = '';  
         currentOperator = '';
