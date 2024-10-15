@@ -29,27 +29,47 @@ operatorButton.forEach(button => {
     button.addEventListener('click',(e) => {
         if(firstOperand === ''){
             firstOperand = displayValue;
-            displayValue = '';
-            currentOperator = e.target.textContent;
-        }
-        const operator = e.target.textContent
-        displayValue += operator
-        operationValue += operator
-        // inputScreen.textContent =displayValue
+        } else if (currentOperator !== '') {
+            secondOperand = displayValue
+            const result = operate
+            (currentOperator, parseFloat(firstOperand), parseFloat(secondOperand)); 
+            inputScreen.textContent = result;
+            firstOperand = result;
+        } 
+
+        currentOperator = e.target.textContent;
+        operationValue += `${currentOperator}`
         operationScreen.textContent = operationValue
         displayValue = ''
         
     });
+
 });
 clearButton.addEventListener('click', () => {
     displayValue = ''
+    firstOperand = '';
+    secondOperand = '';
+    currentOperator = '';
     inputScreen.textContent = '0'
     operationScreen.textContent = '0'
 })
+
+deleteButton.addEventListener('click',(e) => {
+    displayValue = displayValue.slice(0,-1)
+    operationValue = operationValue.slice(0,-1)
+    inputScreen.textContent = displayValue
+    operationScreen.textContent = operationValue;
+})
+
 dotButton.addEventListener('click', (e) => {
-    const dot = e.target.textContent;
-    displayValue += dot;
-    inputScreen.textContent = displayValue;
+    if (!displayValue.includes('.')){
+        displayValue += '.';
+        operationValue += '.'
+        inputScreen.textContent = displayValue;
+        operationScreen.textContent = operationValue;
+    }
+    
+    
 })
 equalsButton.addEventListener('click', () => {
     if (firstOperand !== '' && currentOperator !== '') {
@@ -57,9 +77,11 @@ equalsButton.addEventListener('click', () => {
         const result = operate
             (currentOperator, parseFloat(firstOperand), parseFloat(secondOperand)); 
         inputScreen.textContent = result;
-        displayValue = result;
+        operationScreen.textContent  = `${operationValue} = ${result}`
+        displayValue = result.toString();
         firstOperand = '';  
         currentOperator = '';
+        operationValue = result.toString();
     }
 });
 
