@@ -50,6 +50,7 @@ clearButton.addEventListener('click', () => {
     firstOperand = '';
     secondOperand = '';
     currentOperator = '';
+    operationValue = '';
     inputScreen.textContent = '0'
     operationScreen.textContent = '0'
 })
